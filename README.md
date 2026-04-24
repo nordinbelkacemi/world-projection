@@ -1,43 +1,21 @@
-# 🌍 Web Mercator Projection Visualizer
+# world-projection
 
-A stunning, interactive 3D visualization that demonstrates exactly how a 3D Earth projection unfolds onto a 2D plane using the **Web Mercator** projection mapping (the standard projection used by Google Maps).
+An interactive 3D visualization of the Web Mercator projection (the coordinate projection used by Google Maps). 
 
-## 🚀 Live Demo
+[Live Demo](https://nordinbelkacemi.github.io/world-projection/)
 
-**[View the Live Visualizer here](https://nordinbelkacemi.github.io/world-projection/)**
+## Overview
 
-## ✨ Features
+This project demonstrates how a 3D globe unwraps into a 2D map. 
+- Uses **Three.js** and a custom WebGL shader to mathematically interpolate the geometry between a sphere, a cylinder, and a flat Mercator plane.
+- Uses **D3.js** and **TopoJSON** to dynamically draw a vector map onto a canvas, which is then used as the WebGL texture. This mimics the flat, un-textured look of vector map layers.
+- Supports dynamically rendering latitude and longitude grid lines in the fragment shader.
 
-- **Geometry Interpolation**: Experience how cartographers convert a 3D globe into a 2D plane. A custom WebGL shader smoothly interpolates mesh vertices through an exact mathematical formula: `Sphere` -> `Cylinder` -> Mercator `Plane`.
-- **Dynamic Vector Topography**: Uses **D3.js** and **TopoJSON** to dynamically paint a minimal vector world map onto a WebGL Texture on the fly. This produces clean, Google Maps-style flat colors without the noise or baked-in lighting of satellite/raster imagery.
-- **Precision Guidelines**: Toggle latitude and longitude guidelines drawn dynamically in a custom fragment shader to give infinite visual crispness at any zoom level.
+## Local setup
 
-## 🛠️ Built With
-
-- [Vite](https://vitejs.dev/) - Blazing fast build tool
-- [Three.js](https://threejs.org/) - WebGL rendering engine
-- [D3 Geo](https://d3js.org/) & [TopoJSON](https://github.com/topojson/topojson) - Equirectangular Canvas drawing
-
----
-
-## 💻 Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/nordinbelkacemi/world-projection.git
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the development server locally:
-   ```bash
-   npm run dev
-   ```
-
-4. Production deployment (automatically targets `gh-pages` branch):
-   ```bash
-   npm run build
-   ```
+```bash
+git clone https://github.com/nordinbelkacemi/world-projection.git
+cd world-projection
+npm install
+npm run dev
+```

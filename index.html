@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Best Practices -->
+    <title>Web Mercator Projection | 3D Visualization</title>
+    <meta name="description" content="A beautiful interactive 3D visualization of the Web Mercator projection used by Google Maps, showing how a sphere unfolds onto a 2D plane." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- 3D Canvas Container -->
+      <canvas id="glcanvas"></canvas>
+
+      <!-- UI Overlay -->
+      <div id="ui-container" class="glass-panel">
+        <header>
+          <h1 id="main-title">Web Mercator Projection</h1>
+          <p id="main-subtitle">Interactive 3D Visualization of the Google Maps projection.</p>
+        </header>
+
+        <div class="controls">
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="projection-slider">Projection State</label>
+              <span id="slider-val-label">Sphere</span>
+            </div>
+            <input type="range" id="projection-slider" min="0" max="100" value="0" />
+            <div class="slider-marks">
+              <span>Sphere</span>
+              <span>Cylinder</span>
+              <span>Plane</span>
+            </div>
+          </div>
+
+          <div class="control-group row-align">
+            <label class="toggle-switch">
+              <input type="checkbox" id="grid-toggle">
+              <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Show Guidelines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
